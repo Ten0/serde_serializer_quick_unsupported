@@ -1,6 +1,6 @@
 [package]
 name = "serde_serializer_quick_unsupported"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Helper for implementing a serializer that supports a reduced subset of the serde data model"
 authors = ["Thomas BESSOU <thomas.bessou@hotmail.fr>"]

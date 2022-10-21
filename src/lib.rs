@@ -20,111 +20,111 @@
 #[macro_export]
 macro_rules! serializer_unsupported {
 	(err = ($($err: tt)*); bool $($rest: tt)*) => {
-		fn serialize_bool(self, v: bool) -> Result<Self::Ok, Self::Error> {
+		fn serialize_bool(self, v: bool) -> std::result::Result<Self::Ok, Self::Error> {
 			let _ = v;
 			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); i8 $($rest: tt)*) => {
-		fn serialize_i8(self, v: i8) -> Result<Self::Ok, Self::Error> {
+		fn serialize_i8(self, v: i8) -> std::result::Result<Self::Ok, Self::Error> {
 			let _ = v;
 			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); i16 $($rest: tt)*) => {
-		fn serialize_i16(self, v: i16) -> Result<Self::Ok, Self::Error> {
+		fn serialize_i16(self, v: i16) -> std::result::Result<Self::Ok, Self::Error> {
 			let _ = v;
 			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); i32 $($rest: tt)*) => {
-		fn serialize_i32(self, v: i32) -> Result<Self::Ok, Self::Error> {
+		fn serialize_i32(self, v: i32) -> std::result::Result<Self::Ok, Self::Error> {
 			let _ = v;
 			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); i64 $($rest: tt)*) => {
-		fn serialize_i64(self, v: i64) -> Result<Self::Ok, Self::Error> {
+		fn serialize_i64(self, v: i64) -> std::result::Result<Self::Ok, Self::Error> {
 			let _ = v;
 			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); u8 $($rest: tt)*) => {
-		fn serialize_u8(self, v: u8) -> Result<Self::Ok, Self::Error> {
+		fn serialize_u8(self, v: u8) -> std::result::Result<Self::Ok, Self::Error> {
 			let _ = v;
 			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); u16 $($rest: tt)*) => {
-		fn serialize_u16(self, v: u16) -> Result<Self::Ok, Self::Error> {
+		fn serialize_u16(self, v: u16) -> std::result::Result<Self::Ok, Self::Error> {
 			let _ = v;
 			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); u32 $($rest: tt)*) => {
-		fn serialize_u32(self, v: u32) -> Result<Self::Ok, Self::Error> {
+		fn serialize_u32(self, v: u32) -> std::result::Result<Self::Ok, Self::Error> {
 			let _ = v;
 			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); u64 $($rest: tt)*) => {
-		fn serialize_u64(self, v: u64) -> Result<Self::Ok, Self::Error> {
+		fn serialize_u64(self, v: u64) -> std::result::Result<Self::Ok, Self::Error> {
 			let _ = v;
 			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); f32 $($rest: tt)*) => {
-		fn serialize_f32(self, v: f32) -> Result<Self::Ok, Self::Error> {
+		fn serialize_f32(self, v: f32) -> std::result::Result<Self::Ok, Self::Error> {
 			let _ = v;
 			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); f64 $($rest: tt)*) => {
-		fn serialize_f64(self, v: f64) -> Result<Self::Ok, Self::Error> {
+		fn serialize_f64(self, v: f64) -> std::result::Result<Self::Ok, Self::Error> {
 			let _ = v;
 			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); char $($rest: tt)*) => {
-		fn serialize_char(self, v: char) -> Result<Self::Ok, Self::Error> {
+		fn serialize_char(self, v: char) -> std::result::Result<Self::Ok, Self::Error> {
 			let _ = v;
 			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); str $($rest: tt)*) => {
-		fn serialize_str(self, v: &str) -> Result<Self::Ok, Self::Error> {
+		fn serialize_str(self, v: &str) -> std::result::Result<Self::Ok, Self::Error> {
 			let _ = v;
 			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); bytes $($rest: tt)*) => {
-		fn serialize_bytes(self, v: &[u8]) -> Result<Self::Ok, Self::Error> {
+		fn serialize_bytes(self, v: &[u8]) -> std::result::Result<Self::Ok, Self::Error> {
 			let _ = v;
 			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); none $($rest: tt)*) => {
-		fn serialize_none(self) -> Result<Self::Ok, Self::Error> {
+		fn serialize_none(self) -> std::result::Result<Self::Ok, Self::Error> {
 			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); some $($rest: tt)*) => {
-		fn serialize_some<T: ?Sized>(self, value: &T) -> Result<Self::Ok, Self::Error>
+		fn serialize_some<T: ?Sized>(self, value: &T) -> std::result::Result<Self::Ok, Self::Error>
 		where
 			T: serde::Serialize,
 		{
@@ -134,13 +134,13 @@ macro_rules! serializer_unsupported {
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); unit $($rest: tt)*) => {
-		fn serialize_unit(self) -> Result<Self::Ok, Self::Error> {
+		fn serialize_unit(self) -> std::result::Result<Self::Ok, Self::Error> {
 			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); unit_struct $($rest: tt)*) => {
-		fn serialize_unit_struct(self, name: &'static str) -> Result<Self::Ok, Self::Error> {
+		fn serialize_unit_struct(self, name: &'static str) -> std::result::Result<Self::Ok, Self::Error> {
 			let _ = name;
 			Err(($($err)*))
 		}
@@ -152,7 +152,7 @@ macro_rules! serializer_unsupported {
 			name: &'static str,
 			variant_index: u32,
 			variant: &'static str,
-		) -> Result<Self::Ok, Self::Error> {
+		) -> std::result::Result<Self::Ok, Self::Error> {
 			let _ = name;
 			let _ = variant_index;
 			let _ = variant;
@@ -161,7 +161,7 @@ macro_rules! serializer_unsupported {
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); newtype_struct $($rest: tt)*) => {
-		fn serialize_newtype_struct<T: ?Sized>(self, name: &'static str, value: &T) -> Result<Self::Ok, Self::Error>
+		fn serialize_newtype_struct<T: ?Sized>(self, name: &'static str, value: &T) -> std::result::Result<Self::Ok, Self::Error>
 		where
 			T: serde::Serialize,
 		{
@@ -178,7 +178,7 @@ macro_rules! serializer_unsupported {
 			variant_index: u32,
 			variant: &'static str,
 			value: &T,
-		) -> Result<Self::Ok, Self::Error>
+		) -> std::result::Result<Self::Ok, Self::Error>
 		where
 			T: serde::Serialize,
 		{
@@ -192,7 +192,7 @@ macro_rules! serializer_unsupported {
 	};
 	(err = ($($err: tt)*); seq $($rest: tt)*) => {
 		type SerializeSeq = serde::ser::Impossible<Self::Ok, Self::Error>;
-		fn serialize_seq(self, len: Option<usize>) -> Result<Self::SerializeSeq, Self::Error> {
+		fn serialize_seq(self, len: Option<usize>) -> std::result::Result<Self::SerializeSeq, Self::Error> {
 			let _ = len;
 			Err(($($err)*))
 		}
@@ -200,7 +200,7 @@ macro_rules! serializer_unsupported {
 	};
 	(err = ($($err: tt)*); tuple $($rest: tt)*) => {
 		type SerializeTuple = serde::ser::Impossible<Self::Ok, Self::Error>;
-		fn serialize_tuple(self, len: usize) -> Result<Self::SerializeTuple, Self::Error> {
+		fn serialize_tuple(self, len: usize) -> std::result::Result<Self::SerializeTuple, Self::Error> {
 			let _ = len;
 			Err(($($err)*))
 		}
@@ -208,7 +208,7 @@ macro_rules! serializer_unsupported {
 	};
 	(err = ($($err: tt)*); tuple_struct $($rest: tt)*) => {
 		type SerializeTupleStruct = serde::ser::Impossible<Self::Ok, Self::Error>;
-		fn serialize_tuple_struct(self, name: &'static str, len: usize) -> Result<Self::SerializeTupleStruct, Self::Error> {
+		fn serialize_tuple_struct(self, name: &'static str, len: usize) -> std::result::Result<Self::SerializeTupleStruct, Self::Error> {
 			let _ = name;
 			let _ = len;
 			Err(($($err)*))
@@ -223,7 +223,7 @@ macro_rules! serializer_unsupported {
 			variant_index: u32,
 			variant: &'static str,
 			len: usize,
-		) -> Result<Self::SerializeTupleVariant, Self::Error> {
+		) -> std::result::Result<Self::SerializeTupleVariant, Self::Error> {
 			let _ = name;
 			let _ = variant_index;
 			let _ = variant;
@@ -234,7 +234,7 @@ macro_rules! serializer_unsupported {
 	};
 	(err = ($($err: tt)*); map $($rest: tt)*) => {
 		type SerializeMap = serde::ser::Impossible<Self::Ok, Self::Error>;
-		fn serialize_map(self, len: Option<usize>) -> Result<Self::SerializeMap, Self::Error> {
+		fn serialize_map(self, len: Option<usize>) -> std::result::Result<Self::SerializeMap, Self::Error> {
 			let _ = len;
 			Err(($($err)*))
 		}
@@ -242,7 +242,7 @@ macro_rules! serializer_unsupported {
 	};
 	(err = ($($err: tt)*); struct $($rest: tt)*) => {
 		type SerializeStruct = serde::ser::Impossible<Self::Ok, Self::Error>;
-		fn serialize_struct(self, name: &'static str, len: usize) -> Result<Self::SerializeStruct, Self::Error> {
+		fn serialize_struct(self, name: &'static str, len: usize) -> std::result::Result<Self::SerializeStruct, Self::Error> {
 			let _ = name;
 			let _ = len;
 			Err(($($err)*))
@@ -257,7 +257,7 @@ macro_rules! serializer_unsupported {
 			variant_index: u32,
 			variant: &'static str,
 			len: usize,
-		) -> Result<Self::SerializeStructVariant, Self::Error> {
+		) -> std::result::Result<Self::SerializeStructVariant, Self::Error> {
 			let _ = name;
 			let _ = variant_index;
 			let _ = variant;
@@ -268,7 +268,7 @@ macro_rules! serializer_unsupported {
 	};
 	(err = ($($err: tt)*); i128 $($rest: tt)*) => {
 		serde::serde_if_integer128! {
-			fn serialize_i128(self, v: i128) -> Result<Self::Ok, Self::Error> {
+			fn serialize_i128(self, v: i128) -> std::result::Result<Self::Ok, Self::Error> {
 				let _ = v;
 				Err(($($err)*))
 			}
@@ -277,7 +277,7 @@ macro_rules! serializer_unsupported {
 	};
 	(err = ($($err: tt)*); u128 $($rest: tt)*) => {
 		serde::serde_if_integer128! {
-			fn serialize_u128(self, v: u128) -> Result<Self::Ok, Self::Error> {
+			fn serialize_u128(self, v: u128) -> std::result::Result<Self::Ok, Self::Error> {
 				let _ = v;
 				Err(($($err)*))
 			}
