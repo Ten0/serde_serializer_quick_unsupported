@@ -132,9 +132,9 @@ macro_rules! serializer_unsupported {
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); some $($rest: tt)*) => {
-		fn serialize_some<T: ?Sized>(self, value: &T) -> ::core::result::Result<Self::Ok, Self::Error>
+		fn serialize_some<T>(self, value: &T) -> ::core::result::Result<Self::Ok, Self::Error>
 		where
-			T: serde::Serialize,
+			T: serde::Serialize + ?Sized,
 		{
 			let _ = value;
 			Err(($($err)*))
@@ -169,9 +169,9 @@ macro_rules! serializer_unsupported {
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); newtype_struct $($rest: tt)*) => {
-		fn serialize_newtype_struct<T: ?Sized>(self, name: &'static str, value: &T) -> ::core::result::Result<Self::Ok, Self::Error>
+		fn serialize_newtype_struct<T>(self, name: &'static str, value: &T) -> ::core::result::Result<Self::Ok, Self::Error>
 		where
-			T: serde::Serialize,
+			T: serde::Serialize + ?Sized,
 		{
 			let _ = name;
 			let _ = value;
@@ -180,7 +180,7 @@ macro_rules! serializer_unsupported {
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); newtype_variant $($rest: tt)*) => {
-		fn serialize_newtype_variant<T: ?Sized>(
+		fn serialize_newtype_variant<T>(
 			self,
 			name: &'static str,
 			variant_index: u32,
@@ -188,7 +188,7 @@ macro_rules! serializer_unsupported {
 			value: &T,
 		) -> ::core::result::Result<Self::Ok, Self::Error>
 		where
-			T: serde::Serialize,
+			T: serde::Serialize + ?Sized,
 		{
 			let _ = name;
 			let _ = variant_index;
