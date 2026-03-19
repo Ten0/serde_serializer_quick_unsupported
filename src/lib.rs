@@ -1,10 +1,12 @@
-//! Often times you need to implement a serializer where a bunch of input types are
-//! unexpected/unsupported This convenience macro allows you to declare those more easily
+//! Often times you need to implement a serializer where a bunch of input types
+//! are unexpected/unsupported This convenience macro allows you to declare
+//! those more easily
 
 #![no_std]
 
-/// Often times you need to implement a serializer where a bunch of input types are
-/// unexpected/unsupported This convenience macro allows you to declare those more easily:
+/// Often times you need to implement a serializer where a bunch of input types
+/// are unexpected/unsupported This convenience macro allows you to declare
+/// those more easily:
 ///
 /// ```rust
 /// use serde_serializer_quick_unsupported::serializer_unsupported;
@@ -273,20 +275,16 @@ macro_rules! serializer_unsupported {
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); i128 $($rest: tt)*) => {
-		serde::serde_if_integer128! {
-			fn serialize_i128(self, v: i128) -> ::core::result::Result<Self::Ok, Self::Error> {
-				let _ = v;
-				Err(($($err)*))
-			}
+		fn serialize_i128(self, v: i128) -> ::core::result::Result<Self::Ok, Self::Error> {
+			let _ = v;
+			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
 	(err = ($($err: tt)*); u128 $($rest: tt)*) => {
-		serde::serde_if_integer128! {
-			fn serialize_u128(self, v: u128) -> ::core::result::Result<Self::Ok, Self::Error> {
-				let _ = v;
-				Err(($($err)*))
-			}
+		fn serialize_u128(self, v: u128) -> ::core::result::Result<Self::Ok, Self::Error> {
+			let _ = v;
+			Err(($($err)*))
 		}
 		$crate::serializer_unsupported!{ err = ($($err)*); $($rest)* }
 	};
